@@ -66,7 +66,41 @@ SELECT Full_Name, ET_IQ, ET_Gmath, ET_English FROM Trainee WHERE LENGTH(Full_Nam
 SELECT * FROM Trainee ORDER BY Birth_Date DESC LIMIT 5; 
 
 -- 14
+SELECT  Full_Name AS ET FROM Trainee WHERE ET_IQ + ET_Gmath >= 20 AND ET_IQ >= 8 AND ET_Gmath >=8 AND ET_English >= 18;
 
+-- Q15 
+DELETE FROM Trainee WHERE TraineeID = 5;
 
-                    
+-- Q16
+DELETE FROM Trainee WHERE ET_IQ + ET_Gmath <= 15;
 
+-- Q17
+DELETE FROM Trainee WHERE Birth_Date < '1991-10-7';
+
+-- Q18
+UPDATE Trainee SET Training_Class = 'VTI003' WHERE TraineeID = 3; 
+
+-- Q19
+UPDATE Trainee SET Full_Name = 'LeVanA',
+					ET_IQ = 10,
+                    ET_Gmath = 15,
+                    ET_English = 30 WHERE TraineeID = 10;
+
+-- Q20
+SELECT COUNT(*) AS So_Thuc_Tap_Sinh FROM Trainee WHERE Training_Class = 'VTI001';
+
+-- Q21 Q20 like Q21
+SELECT COUNT(*) AS So_Thuc_Tap_Sinh FROM Trainee WHERE Training_Class = 'VTI001';
+
+-- Q22
+
+-- Q23
+SELECT Gender , COUNT(*) AS So_Thuc_Tap_Sinh FROM Trainee GROUP BY Gender;       
+
+-- Q24, Q25
+SELECT Training_Class FROM Trainee GROUP BY Training_Class HAVING COUNT(*) > 5;
+
+-- Q26
+SELECT Evaluation_Notes FROM Trainee GROUP BY Evaluation_Notes HAVING COUNT(*) < 4;
+-- Q27
+      
